@@ -14,7 +14,7 @@
     </div>
     
     <!-- Describe what this notebook page is showing -->
-    <p><em>What I learned today...</em></p>
+    <p><em>What I learned today is how to draw a picture using JavaScript, coding all of the coordinates of the shapes/figures and coloring them, making them a collage of shapes to form a very nice picture! I can divide the size of the canvas to correctly align the shape however I want!</em></p>
     
     <!-- Below is the code that will run -->
     <div>
@@ -24,9 +24,25 @@
       </div>
 
 <script class="code">
-
-    //Your code here
-
+        function start(){
+            canvas.prepare();
+            var halfRect = new Rect (0,0,canvas.getWidth(),canvas.getHeight());
+            halfRect.setColor("#F0FD02");
+            canvas.add(halfRect);
+            
+            var halfCircle = new Circle (canvas.getWidth(),canvas.getHeight()/9,75);
+            halfCircle.setColor("#FEF0FE");
+            canvas.add(halfCircle);
+        
+            var radius = canvas.getHeight()/6
+            var bottomCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-radius,radius);
+            bottomCircle.setColor("White");
+            canvas.add(bottomCircle);
+        
+          
+        
+        canvas.draw();
+        }
 </script>
       <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
       <textarea id="Console"></textarea> <!-- Text output console -->
