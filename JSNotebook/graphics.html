@@ -34,12 +34,24 @@
             halfCircle.setColor("#FEF0FE");
             canvas.add(halfCircle);
         
-            var radius = canvas.getHeight()/6
+            var radius = canvas.getHeight()/6;
             var bottomCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-radius,radius);
-            bottomCircle.setColor("White");
+            bottomCircle.setColor("#C010FF");
             canvas.add(bottomCircle);
+            
+            var radius2 = radius*2/3;
+            var middleCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-2*radius-radius2,radius2);
+            middleCircle.setColor("#C010FF");
+            canvas.add(middleCircle);
         
-          
+            var radius3 = radius2*2/3;
+            var topCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-2*radius-2*radius2-radius3,radius3);
+            topCircle.setColor("#C010FF");
+            canvas.add(topCircle);
+        
+            var eyeCircle = new Circle (canvas.getWidth()/2-10,canvas.getHeight()-4*canvas.getHeight()/6,radius3*2/3+2);
+            eyeCircle.setColor("orange");
+            canvas.add(eyeCircle);
         
         canvas.draw();
         }
