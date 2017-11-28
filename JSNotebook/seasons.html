@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>      
+    <link href="https://perryma.tk/jsnotebook/notebook.css" rel="stylesheet" type="text/css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>My JavaScript Notebook</title>
+  </head>
+
+  <body>
+    <div class="header">
+        <!-- Title for this notebook page -->
+        <h1>My JavaScript Notebook: <em>Graphics Objects</em></h1>
+        <div class="menubar"></div>
+    </div>
+    
+    <!-- Describe what this notebook page is showing -->
+    <p><em>What I learned today is how to change code questions so when you answer them "yes", what I want will happen, and if you answer "no", then an alternative will happen, which will be whatever I choose to code! I set the condition of the "if" statement that I want to be either true or false, and if the statement is true, the following code will run under in the curly brackets right below the "if (condition)". If the statement is false, I will have the computer run the code beneath the "else" part of the "if" statement code!</em></p>
+    
+    <!-- Below is the code that will run -->
+    <div>
+      <div class="title"> <!-- title bar for the javascript code -->
+        <button onclick="start();">Run</button> <!-- Run button that calls start function when pressed -->
+        Hello World <!-- Program title -->
+      </div>
+
+<script class="code">
+    function start(){
+        var seasonQuestion = readBoolean("Where you are, is it winter?")
+       if (seasonQuestion) {
+      canvas.prepare();
+      var canvasRectangle = new Rect (0,0,canvas.getWidth(),canvas.getHeight());
+      canvasRectangle.setColor("#0000FF")
+      canvas.add(canvasRectangle);
+      
+      var radius = canvas.getHeight()/6;
+      var bottomCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-radius,radius);
+      canvas.add(bottomCircle);
+      bottomCircle.setColor("white");
+      
+      var radius2 = radius*2/3;
+      var mediumCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-radius*1.9-radius2,radius2);
+      canvas.add(mediumCircle);
+      mediumCircle.setColor("white");
+      
+      var radius3 = radius2*2/3;
+      var smallestCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-radius*3-radius2,radius3);
+      canvas.add(smallestCircle);
+      smallestCircle.setColor("white");
+      
+      var radius4 = radius3*2/3;
+      var faceCircle = new Circle (canvas.getWidth()/2, canvas.getHeight()-radius*3-radius2-9, radius4-10);
+      canvas.add(faceCircle);
+      faceCircle.setColor("orange");
+      
+      canvas.draw();
+      }
+      else {
+        
+            
+            canvas.prepare();
+      var canvRectangle = new Rect (0,0,canvas.getWidth(),canvas.getHeight());
+      canvRectangle.setColor("#FC6000")
+      canvas.add(canvRectangle);
+      
+      var radius = canvas.getHeight()/6;
+      var bottCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-radius,radius);
+      bottCircle.setColor("#DEB887");
+      canvas.add(bottCircle);
+      
+      
+      var radius2 = radius*2/3;
+      var mediCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-radius*1.9-radius2,radius2);
+      canvas.add(mediCircle);
+      mediCircle.setColor("#DEB887");
+      
+      var radius3 = radius2*2/3;
+      var smalleCircle = new Circle (canvas.getWidth()/2,canvas.getHeight()-radius*3-radius2,radius3);
+      canvas.add(smalleCircle);
+      smalleCircle.setColor("#DEB887");
+      
+      var radius4 = radius3*2/3;
+      var faCircle = new Circle (canvas.getWidth()/2, canvas.getHeight()-radius*3-radius2-9, radius4-10);
+      canvas.add(faCircle);
+      faCircle.setColor("#D305F4");
+          
+      canvas.draw();
+          
+          
+          
+      } 
+        
+        
+        
+        
+        
+        
+        }
+      
+      
+</script>
+      <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
+      <textarea id="Console"></textarea> <!-- Text output console -->
+    </div>
+    <script src="https://perryma.tk/jsnotebook/notebook.js"></script>    
+  </body>
+</html>
