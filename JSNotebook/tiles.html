@@ -14,7 +14,7 @@
     </div>
     
     <!-- Describe what this notebook page is showing -->
-    <p><em>What I learned today...</em></p>
+    <p><em>What I learned today is how to make continuous circles filling up the canvas, each of different colors!</em></p>
     
     <!-- Below is the code that will run -->
     <div>
@@ -24,9 +24,39 @@
       </div>
 
 <script class="code">
-
-    //Your code here
-
+    function start() {
+        canvas.prepare();
+        var circlesPerRowQuestion = readInt("How many circles do you want drawn per row?")
+    
+        for(var rowsDown = 0;rowsDown<=canvas.getHeight();rowsDown=rowsDown+1){
+        y=y*rowsDown
+        for(var count = 0;count<circlesPerRowQuestion;count=count+1) {
+            var radius = canvas.getWidth()/circlesPerRowQuestion/2;
+            var x = radius+(count*radius*2)
+            var y = radius
+            var randomNumber = Math.floor(Math.random()*256)
+            var randomNummer = Math.floor(Math.random()*256)
+            var randomCat = Math.floor(Math.random()*256)
+            var randomColor = rgb(randomNummer,randomCat,randomNumber)
+        
+            var allCircles = new Circle (x,y,radius)
+            allCircles.setColor(randomColor)
+            canvas.add(allCircles);
+       
+        
+        
+        }
+    
+        
+    
+    
+        }
+    
+    
+    
+    
+    canvas.draw();
+    }
 </script>
       <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
       <textarea id="Console"></textarea> <!-- Text output console -->
