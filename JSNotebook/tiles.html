@@ -14,7 +14,7 @@
     </div>
     
     <!-- Describe what this notebook page is showing -->
-    <p><em>What I learned today is how to make continuous circles filling up the canvas, each of different colors!</em></p>
+    <p><em>What I learned today is how to make continuous circles filling up the canvas, each of different colors! I copied the code from my previous assignment, <a href="https://repl.it/student/submissions/2119825?lite=true">Row Of Circles</a>, in order to get the bones of this assignment. The top row of circles is already complete, so I added a new for loop, making a new variable called "rowsDown" in order to use that to make a new row of circles each time the for loop inside of the new for loop is ran. I rewrote the code in the "x" variable in the "y" variable to make the row beneath the previous one, multiplying the "rowsDown" variable by the radius by 2 to have each row be exactly the same distance apart, touching each other, filling up the canvas!</em></p>
     
     <!-- Below is the code that will run -->
     <div>
@@ -26,21 +26,23 @@
 <script class="code">
     function start() {
         canvas.prepare();
-        var circlesPerRowQuestion = readInt("How many circles do you want drawn per row?")
+        var circlesPerRowQuestion = readInt("How many circles do you want drawn per row?");
     
         for(var rowsDown = 0;rowsDown<=canvas.getHeight();rowsDown=rowsDown+1){
-        y=y*rowsDown
-        for(var count = 0;count<circlesPerRowQuestion;count=count+1) {
-            var radius = canvas.getWidth()/circlesPerRowQuestion/2;
-            var x = radius+(count*radius*2)
-            var y = radius
-            var randomNumber = Math.floor(Math.random()*256)
-            var randomNummer = Math.floor(Math.random()*256)
-            var randomCat = Math.floor(Math.random()*256)
-            var randomColor = rgb(randomNummer,randomCat,randomNumber)
         
-            var allCircles = new Circle (x,y,radius)
-            allCircles.setColor(randomColor)
+        for(var count = 0;count<circlesPerRowQuestion;count=count+1) {
+            
+            var radius = canvas.getWidth()/circlesPerRowQuestion/2;
+            var x = radius+(count*radius*2);
+            var y = radius+(rowsDown*radius*2);
+            
+            var randomNumber = Math.floor(Math.random()*256);
+            var randomNummer = Math.floor(Math.random()*256);
+            var randomCat = Math.floor(Math.random()*256);
+            var randomColor = rgb(randomNummer,randomCat,randomNumber);
+        
+            var allCircles = new Circle (x,y,radius);
+            allCircles.setColor(randomColor);
             canvas.add(allCircles);
        
         
