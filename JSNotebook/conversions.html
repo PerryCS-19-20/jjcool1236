@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>      
+    <link href="https://perryma.tk/jsnotebook/notebook.css" rel="stylesheet" type="text/css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://perryma.tk/jsnotebook/notebook.js"></script>
+    <title>My JavaScript Notebook</title>
+  </head>
+
+  <body>
+    <div class="header">
+        <!-- Title for this notebook page -->
+        <h1>My JavaScript Notebook: <em>Variables and Math</em></h1>
+        <div class="menubar"></div>
+    </div>
+    
+    <!-- Describe what this notebook page is showing -->
+    <p><em>What I learned today is how to use parameters to convert measurements from one type to another by multiplying the number you give by the number of kilometers that are equal to that amount, and created new variables for each of the new measurements I converted the miles number to!</em></p>
+    
+    <!-- Below is the code that will run -->
+    <div>
+      <div class="title"> <!-- title bar for the javascript code -->
+        <button onclick="start();">Run</button> <!-- Run button that calls start function when pressed -->
+        Hello World <!-- Program title -->
+      </div>
+
+<script class="code">
+    function start() {
+        var mileQuestion = readInt("Your distance in miles?");
+        var kilometers = milesToKilometers(mileQuestion);
+        var meters = kilometersToMeters(kilometers);
+        var feet = meterToFeet(meters);
+        var inches = feetToInches(feet);
+        var millimeters = inchesToMillimeters(inches);
+        println("Distance in miles? "+mileQuestion);
+        println("Distance in kilometers: "+kilometers);
+        println("Distance in meters: "+meters);
+        println("Distance in feet: "+feet);
+        println("Distance in inches: "+inches);
+        println("Distance in millimeters: "+millimeters);
+    }
+    
+    function milesToKilometers(myData) {
+        myData=myData*1.609344
+        return(myData);
+    }
+    
+    
+    function kilometersToMeters(myNumber) {
+        myNumber=myNumber*1000
+        return(myNumber);
+    }
+
+    
+    function meterToFeet(myFeet) {
+        myFeet=myFeet*3.28084
+        return(myFeet);
+    }
+    
+    function feetToInches(myHand) {
+        myHand=myHand*12
+        return(myHand);
+    }
+    
+    function inchesToMillimeters (myTeeth) {
+        myTeeth=myTeeth*25.4
+        return(myTeeth);
+    }
+    
+    
+    
+    
+    
+    
+</script>
+      <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
+      <textarea id="Console"></textarea> <!-- Text output console -->
+    </div>
+    
+  </body>
+</html>
